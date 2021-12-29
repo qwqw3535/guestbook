@@ -10,26 +10,31 @@ const GuestBookItem = () => {
   const contentChange = (e) => {
     setContent(e.target.value);
   };
+  const onClick = () => {
+    submit();
+
+    setTitle("");
+    setContent("");
+  };
 
   const submit = () => {
     const post = {
       title: title,
       content: content,
     };
+    console.log("submitted");
     axios({
       method: "POST",
-      url: "http://localhost:3306/data",
+      url: "http://localhost:3306/lists",
       data: post,
     })
       .then((res) => {
-        console.log(res);
+        console.log("axios is working " + res.data.title);
       })
       .catch((error) => {
         console.log(error);
         throw new Error(error);
       });
-    setTitle("");
-    setContent("");
   };
   return (
     <div style={{ width: "60%" }}>
@@ -48,7 +53,7 @@ const GuestBookItem = () => {
       />
       <div />
       <button
-        onClick={() => submit()}
+        onClick={() => onClick()}
         style={{ float: "right", width: "15%", height: "20%" }}
       >
         Write

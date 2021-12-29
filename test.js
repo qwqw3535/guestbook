@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
-const path = require("path");
 const port = 3306;
 const cors = require("cors");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
-/*
+
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -13,7 +12,14 @@ var connection = mysql.createConnection({
   database: "new_database",
 });
 connection.connect();
-*/
+
+connection.query("SELECT 1+1 AS", function (error, results, fields) {
+  if (error) throw error;
+  console.log(results);
+  console.log("The solution is ", results[0].solution);
+});
+connection.end();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(bodyParser.json());

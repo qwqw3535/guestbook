@@ -1,0 +1,10 @@
+{
+  "development": {
+    "db": "onc9_test_27d25691df48bfd3d5a2dfa3bc5853e970e2440b",
+    "user": "onc9_test_27d25691df48bfd3d5a2dfa3bc5853e970e2440b",
+    "password": null,
+    "host": "ryucheat.com",
+    "dialect": "mysql",
+    "port": "3306"
+  }
+}
