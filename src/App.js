@@ -87,12 +87,19 @@ const App = () => {
         clickHandler={clickHandler}
         style={{ position: "relative", top: "200px" }}
       ></NewGuestBookItem>
-      <div>
+      <div style={{ margin: "20px" }} />
+      <div
+        style={{
+          width: "60%",
+          textAlign: "left",
+        }}
+      >
         {data.map((datum) => (
           <GuestBookItem
             key={datum.id}
             title={datum.title}
             content={datum.content}
+            time={datum.createdAt}
           />
         ))}
       </div>
