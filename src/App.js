@@ -42,6 +42,7 @@ const App = () => {
       });
   };
 
+  //update the lists as soon as submitted
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios({
@@ -62,6 +63,7 @@ const App = () => {
     };
     fetchData();
   }, [submitted]);
+
   return !loaded ? (
     <div>loading</div>
   ) : (
